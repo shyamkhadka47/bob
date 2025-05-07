@@ -62,8 +62,9 @@ const Footer = () => {
         <p className="capitalize text-yellow-500 text-[16px] ">
           designed & developed by{" "}
           <Link
+          target='blank'
             href={"https://www.designtechjoy.com"}
-            className="text-primary font-bold"
+            className="text-primary font-bold ml-3 px-3 py-2 rounded-lg border-[2px] border-green-800"
           >
             Design Tech Joy
           </Link>
