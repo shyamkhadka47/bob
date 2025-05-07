@@ -29,17 +29,17 @@ const Header = () => {
       {/* Mobile Menu Button */}
       <button
         className="md:hidden"
-        onClick={() => setIsOpen(!isOpen)}
+        
         aria-label="Toggle menu"
       >
-        {isOpen ? <X size={32} /> : <Menu size={32} />}
+        {isOpen ? <X size={32}  onClick={()=>setIsOpen(false)}/> : <Menu size={32} onClick={() => setIsOpen(true)}/>}
       </button>
 
       {/* Mobile Nav */}
       {isOpen && (
         <div className="absolute top-[100%] left-0 w-full bg-white border-b border-gray-200 flex flex-col items-center gap-6 py-6 md:hidden z-50">
          {navLinks.map((el, i)=>(
-          <Link key={i} href={el.url} className='text-2xl md:text-[16px] font-bold text-green-800'>{el.name}</Link>
+          <Link key={i} href={el.url} className='text-2xl md:text-[16px] font-bold text-green-800' onClick={()=>setIsOpen(false)}>{el.name}</Link>
          ))}
         </div>
       )}
