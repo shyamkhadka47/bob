@@ -4,8 +4,9 @@ import { X } from "lucide-react";
 import Image from "next/image";  // Import Next.js Image component
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";  // Import Swiper styles
+import Link from "next/link";
 
-const PhotoGrid = ({ title, photos }) => {
+const PhotoGrid = ({ title,align,button, photos }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
 
@@ -21,14 +22,14 @@ const PhotoGrid = ({ title, photos }) => {
       {/* Title */}
       <div className="flex flex-col md:flex-row justify-between items-center my-12">
         <h2 className="text-4xl my-5 text-center font-bold">{title}</h2>
-        <div>
-          <a
-            href="#"
+        {button && <div>
+          <Link
+            href="/visual-history"
             className="px-5 py-2 border-[2px] font-bold border-green-600 w-max"
           >
             View All
-          </a>
-        </div>
+          </Link>
+        </div>}
       </div>
 
       {/* Photo Grid */}
