@@ -11,7 +11,7 @@ import { popularPhotos, questWinningPhotos, editorsChoicePhotos } from '../mockD
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      
       <main>
         <Hero />
         {/* <EarningsSection /> */}
@@ -32,7 +32,7 @@ const Index = () => {
         />
         {/* <ActiveQuests /> */}
       </main>
-      <Footer />
+   
     </div>
   );
 };

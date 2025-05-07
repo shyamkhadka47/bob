@@ -1,6 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
 
+
+const navLinks= [
+  {name:"Storyteller", url:"/storyteller"},
+  {name:"Visual History", url:"/visual-history"},
+  {name:"Videos", url:"/videos"},
+  {name:"Biography", url:"/biography"},
+  {name:"Contact", url:"/contact"}
+]
+
 const Footer = () => {
   return (
     <footer className="bg-black text-white mt-16 font-serif">
@@ -14,31 +23,31 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-4 sm:ml-16">Quick Links</h3>
             <ul className="space-y-2 sm:ml-16 ">
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Popular photos</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">{`Editors' Choice`}</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Quests</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Become a Contributor</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Content types</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Distribution</a></li>
+              {navLinks.map((el,i)=>(
+                <li key={i} className="text-lg text-gray-400 hover:text-white">
+                  <Link href={el.url}>{el.name}</Link>
+                </li>
+              ))}
+             
             </ul>
           </div>
           
           <div>
             <h3 className="font-bold mb-4 ">Contact</h3>
             <ul className="space-y-2 ">
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">About Licensing</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Become a Contributor</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Submission Requirements</a></li>
+              <li><a href="#" className="text-lg text-gray-400 hover:text-white">About Licensing</a></li>
+              <li><a href="#" className="text-lg text-gray-400 hover:text-white">Become a Contributor</a></li>
+              <li><a href="#" className="text-lg text-gray-400 hover:text-white">Submission Requirements</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-bold mb-4 sm:ml-16">Social</h3>
             <ul className="space-y-2 sm:ml-16">
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Facebook</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Twitter</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Instagram</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Pinterest</a></li>
+              <li><a href="#" className="text-lg text-gray-400 hover:text-white">Facebook</a></li>
+              <li><a href="#" className="text-lg text-gray-400 hover:text-white">Twitter</a></li>
+              <li><a href="#" className="text-lg text-gray-400 hover:text-white">Instagram</a></li>
+              <li><a href="#" className="text-lg text-gray-400 hover:text-white">Pinterest</a></li>
             </ul>
           </div>
           

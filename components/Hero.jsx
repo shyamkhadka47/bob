@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="relative container mx-auto mt-10 max-w-[90vw] h-[600px] md:h-[400px] rounded-2xl overflow-hidden">
+    <div className="relative mt-[120px] container mx-auto  max-w-[90vw] h-[600px] md:h-[400px] rounded-2xl overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
