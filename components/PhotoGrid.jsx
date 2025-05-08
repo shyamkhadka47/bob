@@ -37,7 +37,7 @@ const PhotoGrid = ({ title,haveParentClass, haveChildClass ,button, photos }) =>
         {photos.map((photo, index) => (
           <div
             key={photo.id}
-            className={`${haveChildClass ? haveChildClass : "h-[400px] cursor-pointer"}`}
+            className={`${haveChildClass ? haveChildClass : "h-[400px] cursor-pointer"} overflow-hidden `}
             onClick={() => openSlider(index)}
           >
             <Image
@@ -45,7 +45,7 @@ const PhotoGrid = ({ title,haveParentClass, haveChildClass ,button, photos }) =>
               width={400}
               height={400}
               alt={photo.alt}
-              className="w-full rounded-lg h-full object-cover"
+              className="w-full rounded-lg h-full object-cover duration-300 transition-all scale-150 hover:scale-100"
             />
           </div>
         ))}
