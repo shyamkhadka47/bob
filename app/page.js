@@ -19,6 +19,8 @@ const Index = () => {
           title="Popular Photos" 
           subtitle="Most viewed with the highest Rating"
           button={true}
+          haveParentClass={"pic-columns"}
+          haveChildClass={"child"}
           photos={popularPhotos} 
         />
         <PhotoGrid 

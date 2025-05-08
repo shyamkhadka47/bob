@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";  // Import Swiper styles
 import Link from "next/link";
 
-const PhotoGrid = ({ title,align,button, photos }) => {
+const PhotoGrid = ({ title,haveParentClass, haveChildClass ,button, photos }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
 
@@ -33,11 +33,11 @@ const PhotoGrid = ({ title,align,button, photos }) => {
       </div>
 
       {/* Photo Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div className={`${haveParentClass ? haveParentClass : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"}`}>
         {photos.map((photo, index) => (
           <div
             key={photo.id}
-            className="h-[400px] cursor-pointer"
+            className={`${haveChildClass ? haveChildClass : "h-[400px] cursor-pointer"}`}
             onClick={() => openSlider(index)}
           >
             <Image
