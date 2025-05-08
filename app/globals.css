@@ -6,7 +6,7 @@
 
 .pic-columns{
   columns: 4 200px;
-  column-gap: 20px;
+  column-gap: 10px;
 
 }
 .child{
