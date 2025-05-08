@@ -5,7 +5,7 @@
 
 
 .pic-columns{
-  columns: 4 200px;
+  columns: 3 200px;
   column-gap: 10px;
 
 }
