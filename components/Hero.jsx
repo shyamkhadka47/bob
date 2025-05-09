@@ -2,18 +2,19 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="relative mt-[120px] container mx-auto  max-w-[90vw] h-[600px] md:h-[400px] rounded-2xl overflow-hidden">
+    <div className="relative mt-[120px] container mx-auto  max-w-[90vw] h-[600px] md:h-[450px] rounded-2xl overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
-        <Image
+      <div className="absolute inset-0  w-full h-full">
+        <video src="/walkabout.mp4" muted autoPlay loop className="w-full h-full object-cover"></video>
+        {/* <Image
           src="/hero.jpg"
           alt="Mountain landscape with people at sunset"
           fill
           priority
           className="object-cover"
-        />
+        /> */}
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
       </div>
 
       {/* Content Container */}

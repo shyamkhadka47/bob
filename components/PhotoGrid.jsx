@@ -45,7 +45,7 @@ const PhotoGrid = ({ title,haveParentClass, haveChildClass ,button, photos }) =>
               width={400}
               height={400}
               alt={photo.alt}
-              className="w-full rounded-lg h-full object-cover duration-300 transition-all scale-150 hover:scale-100"
+              className="w-full rounded-lg h-full object-cover duration-500 transition-all scale-125 hover:scale-100"
             />
           </div>
         ))}
