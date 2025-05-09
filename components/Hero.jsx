@@ -5,7 +5,7 @@ export default function HeroSection() {
     <div className="relative mt-[120px] container mx-auto  max-w-[90vw] h-[600px] md:h-[450px] rounded-2xl overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0  w-full h-full">
-        <video src="/walkabout.mp4" muted autoPlay loop className="w-full h-full object-cover"></video>
+        <video src="/walkabout.mp4" muted autoPlay playsInline loop className="w-full h-full object-cover"></video>
         {/* <Image
           src="/hero.jpg"
           alt="Mountain landscape with people at sunset"
