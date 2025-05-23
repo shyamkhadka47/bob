@@ -1,113 +1,91 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react'
+import Image from "next/image"
+import Link from "next/link"
 
-
-const sculptures = [
+export default function BlogGrid() {
+  // Blog posts array with dummy data
+  const blogPosts = [
     {
       id: 1,
-      title: "Ethereal Flow",
-      material: "Bronze & Marble",
-      year: "2023",
-      featured: true,
+      category: "Fashion & Style",
+      title: "I Got Baby Brows, A Subtle Alternative To Lamination",
+      image: "/hero.jpg",
+      excerpt:
+        "The beauty industry has a clever knack for taking popular treatments and cutifying them for the masses by stitching on one email word...",
+      date: "Mar 28, 2025",
+      author: "admin",
     },
     {
       id: 2,
-      title: "Temporal Shift",
-      material: "Steel & Glass",
-      year: "2022",
-      featured: false,
+      category: "Fashion & Style",
+      title: "Blazer & Sneakers: A Casual Outfit Formula to Copy this Fall",
+      image: "/hero.jpg",
+      excerpt:
+        "Fall is my favorite season for a lot of reasons: the weather, the flavors, the scented candles, the leaves. But I especially love...",
+      date: "Mar 28, 2025",
+      author: "admin",
     },
     {
       id: 3,
-      title: "Harmonic Resonance",
-      material: "Alabaster",
-      year: "2023",
-      featured: true,
+      category: "Fashion & Style",
+      title: "Nordstrom's Cyber Monday Deals Have Arrived",
+      image: "/hero.jpg",
+      excerpt:
+        "Whether your giftee desperately needs new winter layers, is a homebody who only lives in cozy loungewear, or likes tobe on top of...",
+      date: "Mar 28, 2025",
+      author: "admin",
     },
     {
       id: 4,
-      title: "Celestial Form",
-      material: "Bronze",
-      year: "2021",
-      featured: false,
+      category: "Fashion & Style",
+      title: "The Best Beauty Product I've Tried All Year",
+      image: "/hero.jpg",
+      excerpt:
+        "This past summer, my bff Gemma broke my heart and moved to London, but the good news is, we still text all the...",
+      date: "Mar 28, 2025",
+      author: "admin",
     },
-    {
-      id: 5,
-      title: "Whispered Silence",
-      material: "Marble & Gold Leaf",
-      year: "2023",
-      featured: true,
-    },
-    {
-      id: 6,
-      title: "Fractured Reality",
-      material: "Mixed Media",
-      year: "2022",
-      featured: false,
-    },
-  ];
-const Stories = () => {
+  ]
+
   return (
-    <div> <section id="gallery" className="py-20 px-[5%] md:px-[10%] bg-white">
-    <div className="container mx-auto px-4">
-      <div data-aos="fade-up">
-        <h2 className="text-4xl md:text-5xl font-serif mb-4 text-center">
-          Stories
-        </h2>
-       
+    <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className=" mb-6">
+        <h2 className="text-4xl  font-medium text-center text-gray-900">Latest Stories</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        {sculptures.map((sculpture, index) => (
-          <div
-            key={sculpture.id}
-            className="group cursor-pointer"
-            data-aos="fade-up"
-            data-aos-delay={index * 50}
-          >
-            <Link href={`/storyteller/${sculpture.id}`}>
-              <div className="relative aspect-[3/4] overflow-hidden mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-10">
+        {blogPosts.map((post) => (
+          <div key={post.id} className="border border-green-400 rounded-lg overflow-hidden hover:border-green-900 transition-all duration-500" >
+            <div className="p-4">
+              {/* <span className="inline-block px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full mb-3">
+                {post.category}
+              </span> */}
+
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2 h-14">{post.title}</h3>
+
+              <div className="mb-4 h-48 overflow-hidden rounded-md">
                 <Image
-                  src={`/hero.jpg`}
-                  alt={sculpture.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  src={post.image || "/placeholder.svg"}
+                  alt={post.title}
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
-                {sculpture.featured && (
-                  <div className="absolute top-4 right-4 bg-green-800 text-white text-xs px-3 py-1">
-                    FEATURED
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white border border-white px-6 py-2 hover:bg-white/20 transition-colors duration-300">
-                    View Details
-                  </span>
-                </div>
               </div>
-              <h3 className="text-2xl font-serif mb-2">
-                {sculpture.title}
-              </h3>
-              <p className="text-gray-600">
-                {sculpture.material}, {sculpture.year}
-              </p>
-            </Link>
+
+              <p className="text-sm text-gray-600 mb-4 line-clamp-3 h-16">{post.excerpt}</p>
+
+              <div className="flex items-center justify-between text-xs text-gray-500">
+                <div><span>{post.date}</span>
+                <span className="mx-1">by</span>
+                <span className="font-medium">{post.author}</span></div>
+                <Link href={`/storyteller/${post.id}`}  className="px-4 py-2 border-[2px] text black rounded-md border-green-700" >
+                  Read More
+                </Link>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-
-      <div className="mt-20 text-center" data-aos="fade-up">
-        <Link
-          href="/gallery"
-          className="inline-block border-2 border-black text-black px-10 py-4 text-lg font-semibold hover:bg-black hover:text-white transition-colors duration-300"
-        >
-          View All Works
-        </Link>
-      </div>
     </div>
-  </section></div>
   )
 }
-
-export default Stories
