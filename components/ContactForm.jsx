@@ -1,7 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { FiChevronDown, FiSend, FiCheckCircle, FiCircle } from 'react-icons/fi'
+import {
+  ChevronDown,
+  Send,
+  CheckCircle,
+  Circle,
+} from 'lucide-react'
 
 export default function ContactForm() {
   const [agreed, setAgreed] = useState(false)
@@ -17,13 +22,18 @@ export default function ContactForm() {
             clipPath:
               'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
           }}
-          className="relative left-1/2 -z-10 aspect-[1155/678] w-[72rem] max-w-none -translate-x-1/2 rotate-[30deg] "
+          className="relative left-1/2 -z-10 aspect-[1155/678] w-[72rem] max-w-none -translate-x-1/2 rotate-[30deg]"
         />
       </div>
+
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-semibold text-gray-900 sm:text-5xl">Contact Me</h2>
-        <p className="mt-2 text-lg text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ab odit sunt voluptas, id ratione reprehenderit quos? Minus ea, placeat voluptatem veritatis, incidunt corrupti eveniet commodi vel id numquam nisi.</p>
+        <p className="mt-2 text-lg text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ab odit sunt voluptas, id ratione
+          reprehenderit quos? Minus ea, placeat voluptatem veritatis, incidunt corrupti eveniet commodi vel id numquam nisi.
+        </p>
       </div>
+
       <form className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           {/* First Name */}
@@ -98,7 +108,7 @@ export default function ContactForm() {
                   <option>CA</option>
                   <option>EU</option>
                 </select>
-                <FiChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500" />
+                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
               </div>
               <input
                 type="text"
@@ -131,10 +141,9 @@ export default function ContactForm() {
                 agreed ? 'bg-indigo-100 text-indigo-600 border-indigo-300' : 'bg-gray-100 text-gray-600 border-gray-300'
               }`}
             >
-              {agreed ? <FiCheckCircle className="text-xl" /> : <FiCircle className="text-xl" />}
+              {agreed ? <CheckCircle className="w-5 h-5" /> : <Circle className="w-5 h-5" />}
               <span className="text-sm font-medium">Agree to privacy policy</span>
             </button>
-           
           </div>
         </div>
 
@@ -144,8 +153,8 @@ export default function ContactForm() {
             type="submit"
             className="flex items-center justify-center gap-2 w-full rounded-md bg-green-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-green-700 focus:outline-2 focus:outline-indigo-600"
           >
-            <FiSend className="text-lg" />
-           {` Let's talk`}
+            <Send className="w-4 h-4" />
+            {` Let's talk`}
           </button>
         </div>
       </form>

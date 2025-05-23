@@ -1,8 +1,8 @@
 "use client"
-import { PlaneIcon } from 'lucide-react';
+import {  Play } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FiPlay } from 'react-icons/fi';
+
 
 const getYouTubeID = (url) => {
   const regExp = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
@@ -35,7 +35,7 @@ const YouTubePlayer = ({ url, title, description }) => {
             onClick={() => setIsPlaying(true)}
           >
             <div className="bg-green-800/80 p-3 rounded-full shadow-xl text-xl">
-              <FiPlay color='white' size={30}/>
+              <Play color='white' size={30}/>
             </div>
           </div>
         )}
