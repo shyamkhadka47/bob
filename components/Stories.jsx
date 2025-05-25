@@ -54,13 +54,13 @@ export default function BlogGrid() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-10">
         {blogPosts.map((post) => (
-          <div key={post.id} className="border border-green-400 rounded-lg overflow-hidden hover:border-green-900 transition-all duration-500" >
+          <div key={post.id} className="border rounded-lg overflow-hidden shadow-md hover:scale-105 transition-all duration-500" >
             <div className="p-4">
               {/* <span className="inline-block px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full mb-3">
                 {post.category}
               </span> */}
 
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2 h-14">{post.title}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2 h-14  ">{post.title}</h3>
 
               <div className="mb-4 h-48 overflow-hidden rounded-md">
                 <Image
@@ -74,7 +74,7 @@ export default function BlogGrid() {
 
               <p className="text-sm text-gray-600 mb-4 line-clamp-3 h-16">{post.excerpt}</p>
 
-              <div className="flex items-center justify-between text-xs text-gray-500">
+              <div className="flex items-center justify-between text-xs text-gray-500 border-t-[1px] border-gray-300 pt-3">
                 <div><span>{post.date}</span>
                 <span className="mx-1">by</span>
                 <span className="font-medium">{post.author}</span></div>
